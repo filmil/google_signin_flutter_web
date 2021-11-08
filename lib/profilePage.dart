@@ -32,6 +32,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 fontWeight: FontWeight.w400,
                 fontSize: 20
             ),),
+            SizedBox(height: 20,),
             MaterialButton(
               color: Colors.blueAccent,
               onPressed: SignOut,
