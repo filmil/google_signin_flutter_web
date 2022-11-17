@@ -31,8 +31,6 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -50,29 +48,24 @@ class _HomePageState extends State<HomePage> {
           children: [
             MaterialButton(
               color: Colors.blueAccent,
-                onPressed: SignIn,
-            child: Text('Google sign in'),
+              onPressed: SignIn,
+              child: Text('Google sign in'),
             ),
-
           ],
         ),
       ),
     );
-
-  }
-  Future SignIn()async{
-
-final user = await GoogleSignInApi.Login();
-
-  if(user == null) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Sign in failed')));
-  }
-  else{
-    Navigator.push(context, MaterialPageRoute(builder: (_)=>ProfilePage(user:user)));
   }
 
-  }
+  Future SignIn() async {
+    final user = await GoogleSignInApi.login();
 
+    if (user == null) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Sign in failed')));
+    } else {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (_) => ProfilePage(user: user)));
+    }
+  }
 }
-
-
