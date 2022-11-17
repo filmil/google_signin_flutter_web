@@ -35,7 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             MaterialButton(
               color: Colors.blueAccent,
-              onPressed: SignOut,
+              onPressed: signOut,
               child: Text('Sign Out'),
             ),
           ],
@@ -44,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Future SignOut() async {
+  Future signOut() async {
     Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
   }
 }

@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             MaterialButton(
               color: Colors.blueAccent,
-              onPressed: SignIn,
+              onPressed: signIn,
               child: Text('Google sign in'),
             ),
           ],
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future SignIn() async {
+  Future signIn() async {
     final user = await GoogleSignInApi.login();
 
     if (user == null) {
